@@ -1,6 +1,6 @@
 #include <FastLED.h>
 
-#define NUM_LEDS 75*2*12
+#define NUM_LEDS 75
 #define NUM_CHANNELS 3
 #define BUFFER_SIZE NUM_LEDS*NUM_CHANNELS
 
