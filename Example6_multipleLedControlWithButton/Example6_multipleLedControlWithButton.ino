@@ -1,3 +1,5 @@
+#include "FastLED.h"
+
 // Define type leds
 
 #define NUM_LEDS   75
@@ -11,7 +13,7 @@ const int buttonPin = 2;
 int buttonState = 0;         // variable for reading the pushbutton status
 
 void setup() { 
-  FastLED.addLeds<LED_TYPE, LED_PIN>(ledsArray, NUM_LEDS);
+  FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(ledsArray, NUM_LEDS);
   pinMode(buttonPin, INPUT); 
 }
 
@@ -38,7 +40,8 @@ void loop() {
       for(int i=50;i<75;i++){
         ledsArray[i] = CRGB::Blue;// CRGB(0,0,0);
       }
+      FastLED.show(); 
     }
-    FastLED.show(); 
+    
     delay(30); 
 }

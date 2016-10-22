@@ -10,20 +10,23 @@
 CRGB ledsArray[NUM_LEDS];
 
 uint8_t brightness = 0;
+int sensorPin = 0;
+int val;
 
 void setup() { 
 	FastLED.addLeds<LED_TYPE, LED_PIN,COLOR_ORDER>(ledsArray, NUM_LEDS); 
+	pinMode(sensorPin, OUTPUT);
+	Serial.begin(9600);
 }
 
 void loop() { 
-  brightness += 1;
+  
+  val = analogRead(sensorPin);
+  val = map(val, 0, 1023,0,255); 
+  Serial.println(val);
   
   FastLED.showColor(CRGB::White); 
-  FastLED.setBrightness(  brightness );
-
-  if(brightness==255){
-  	brightness = 0;
-  }
+  FastLED.setBrightness( val );
   
   delay(100);
 }
