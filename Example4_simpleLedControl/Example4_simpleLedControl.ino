@@ -20,13 +20,13 @@ void loop() {
 	
   	// we define all leds black
   	for(int i=0;i<NUM_LEDS;i++){
-  		leds[ledIdWhite] = CRGB(0,0,0);//CRGB::Black; 
+  		ledsArray[ledIdWhite] = CRGB(0,0,0);//CRGB::Black; 
   	}
   	
   	// we define one white led travelling his position
   	ledIdWhite += 1;
   	
-  	leds[ledIdWhite] = CRGB(255,255,255);//CRGB::White; 
+  	ledsArray[ledIdWhite] = CRGB(255,255,255);//CRGB::White; 
   	
   	if(ledIdWhite==NUM_LEDS){
   		ledIdWhite = 0;
