@@ -10,7 +10,7 @@
 CRGB ledsArray[NUM_LEDS];
 
 void setup() { 
-  FastLED.addLeds<LED_TYPE, LED_PIN>(ledsArray, NUM_LEDS); 
+  FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(ledsArray, NUM_LEDS); 
 }
 
 void loop() { 
